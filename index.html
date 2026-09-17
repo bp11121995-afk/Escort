@@ -1,223 +1,140 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A.D Nails Calendar</title>
+
+<title>Sara & The Boss 😂</title>
 
 <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  margin:0;
-  font-family:Arial;
-  text-align:center;
-  background:#fafafa;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b, #7b2cff);
+    color: white;
+    text-align: center;
 }
 
-/* HEADER */
-header {
-  padding:40px 20px;
-  background:linear-gradient(#ffb6d5,#ffe6f0);
+/* PASSWORD SCREEN */
+
+#loginScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #111, #301934, #111);
 }
 
-h1 {margin:0;color:#b30059;}
-
-/* CAR */
-.road {
-  margin-top:15px;
-  height:70px;
-  background:#222;
-  position:relative;
-  overflow:hidden;
-  border-radius:10px;
-}
-.car {
-  position:absolute;
-  top:15px;
-  font-size:30px;
-  animation:drive 5s linear infinite;
-}
-@keyframes drive {
-  0%{left:-60px;}
-  100%{left:110%;}
+.loginBox {
+    width: 100%;
+    max-width: 430px;
+    padding: 40px 25px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    backdrop-filter: blur(15px);
 }
 
-/* MONTH BUTTONS */
-.months {
-  margin:15px;
-}
-.months button {
-  padding:10px 15px;
-  margin:5px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  background:#ddd;
-}
-.months button.active {
-  background:#b30059;
-  color:white;
+.lock {
+    font-size: 70px;
+    margin-bottom: 15px;
 }
 
-/* CALENDAR */
-.calendar {
-  max-width:420px;
-  margin:auto;
+.loginBox h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-.weekdays, .days {
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:5px;
+.loginBox p {
+    opacity: .8;
+    margin-bottom: 25px;
 }
 
-.weekdays div {
-  font-size:12px;
-  font-weight:bold;
+input {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
-.day {
-  padding:10px;
-  border-radius:8px;
-  font-weight:bold;
-  background:#eee;
-  cursor:pointer;
+.loginButton {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 50px;
+    background: #ff4f81;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* STATES */
-.available {background:#2ecc71;color:white;}
-.full {background:#e74c3c;color:white;}
-.closed {background:#777;color:white;}
-.past {background:#bbb;pointer-events:none;}
-.empty {background:transparent;}
-.counter {
-  font-size:10px;
-  display:block;
-  margin-top:3px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>A.D Nails 💅</h1>
-<div class="road">
-  <div class="car">🚗</div>
-</div>
-</header>
-
-<div class="months">
-  <button onclick="setMonth(3,this)">April</button>
-  <button onclick="setMonth(4,this)">May</button>
-  <button onclick="setMonth(5,this)">June</button>
-</div>
-
-<div class="calendar">
-  <div class="weekdays">
-    <div>Mon</div><div>Tue</div><div>Wed</div>
-    <div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
-  </div>
-  <div id="days" class="days"></div>
-</div>
-
-<script>
-
-let today = new Date("2026-04-03");
-let year = 2026;
-let currentMonth = 3;
-
-function setMonth(m,btn){
-  currentMonth = m;
-
-  document.querySelectorAll(".months button")
-  .forEach(b=>b.classList.remove("active"));
-
-  btn.classList.add("active");
-
-  render(m);
+.loginButton:hover {
+    transform: scale(1.03);
 }
 
-function getSlots(){
-  let max = 5;
-  let used = Math.floor(Math.random()*6); // 0-5
-  if(used>5) used=5;
-  return {used, free:max-used};
+#error {
+    color: #ff8080;
+    margin-top: 15px;
+    font-weight: bold;
+    display: none;
 }
 
-function getDays(month){
-  let first = new Date(year, month, 1);
-  let last = new Date(year, month+1, 0);
+/* MAIN WEBSITE */
 
-  let arr=[];
-  for(let d=new Date(first); d<=last; d.setDate(d.getDate()+1)){
-    arr.push(new Date(d));
-  }
-  return arr;
+#website {
+    display: none;
 }
 
-function render(month){
-  let container = document.getElementById("days");
-  container.innerHTML="";
-
-  let days = getDays(month);
-  let offset = (days[0].getDay()+6)%7;
-
-  for(let i=0;i<offset;i++){
-    let e=document.createElement("div");
-    e.className="empty";
-    container.appendChild(e);
-  }
-
-  days.forEach(date=>{
-    let div=document.createElement("div");
-    div.className="day";
-    div.innerText=date.getDate();
-
-    let day=date.getDay();
-    let slots=getSlots();
-
-    let isPast = date < today;
-
-    // PAST
-    if(isPast){
-      div.classList.add("past");
-    }
-
-    // JUNE SUNDAY CLOSED
-    else if(month===5 && day===0){
-      div.classList.add("closed");
-      div.innerHTML=date.getDate()+"<span class='counter'>Closed</span>";
-    }
-
-    else {
-      if(slots.free<=0){
-        div.classList.add("full");
-        div.innerHTML=date.getDate()+"<span class='counter'>FULL</span>";
-      } else {
-        div.classList.add("available");
-        div.innerHTML=date.getDate()+"<span class='counter'>"+slots.free+"/5</span>";
-
-        div.onclick=()=>{
-          let times=["08:00","10:00","12:00","14:00","16:00"];
-          let time=prompt("Choose time:\n"+times.join(", "));
-          if(time){
-            window.open(
-              "https://wa.me/35699758628?text="+
-              encodeURIComponent("Booking "+date.toDateString()+" at "+time)
-            );
-          }
-        };
-      }
-    }
-
-    container.appendChild(div);
-  });
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 20px 50px;
 }
 
-// default
-setMonth(3, document.querySelectorAll(".months button")[0]);
+h2 {
+    margin-bottom: 15px;
+}
 
-</script>
+.mainTitle {
+    font-size: clamp(45px, 10vw, 90px);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 0 rgba(0,0,0,.2);
+    margin-top: 15px;
+}
 
-</body>
-</html>
+.subtitle {
+    font-size: clamp(20px, 5vw, 30px);
+    font-weight: bold;
+    margin: 10px 0 30px;
+}
+
+.card {
+    background: rgba(0,0,0,.25);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 30px 20px;
+    margin: 22px 0;
+    box-shadow: 0 15px 40px rgba(0,0,0,.25);
+}
+
+.names {
+    displ
+```
