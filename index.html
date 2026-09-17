@@ -1,332 +1,168 @@
+```html
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sara & The Boss 😂</title>
+<title>WhatsApp Manager</title>
 
 <style>
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    text-align: center;
+    background: #f3f5f8;
+    color: #17202a;
     min-height: 100vh;
-    background:
-        radial-gradient(circle at top left, #ff8fab, transparent 35%),
-        radial-gradient(circle at bottom right, #7c4dff, transparent 35%),
-        linear-gradient(135deg, #ff416c, #ff4b2b);
 }
 
-.container {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-    padding: 35px 18px 60px;
-}
-
-.title {
-    font-size: clamp(45px, 11vw, 95px);
-    font-weight: 900;
-    line-height: .9;
-    text-transform: uppercase;
-    text-shadow: 5px 5px 0 rgba(0,0,0,.2);
-}
-
-.subtitle {
-    font-size: clamp(20px, 5vw, 30px);
-    font-weight: 800;
-    margin: 20px 0 30px;
-}
-
-.card {
-    background: rgba(0,0,0,.25);
-    border-radius: 28px;
-    padding: 30px 20px;
-    margin: 22px 0;
-    box-shadow: 0 15px 45px rgba(0,0,0,.25);
-    backdrop-filter: blur(8px);
-}
-
-.names {
+/* LOGIN */
+#loginPage {
+    min-height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    padding: 20px;
+    background: linear-gradient(135deg, #0b141a, #17252d);
 }
 
-.name {
+.login-box {
+    width: 100%;
+    max-width: 420px;
     background: white;
-    color: #ff416c;
-    padding: 16px 28px;
-    border-radius: 50px;
-    font-size: 27px;
-    font-weight: 900;
+    border-radius: 22px;
+    padding: 38px;
+    box-shadow: 0 25px 70px rgba(0,0,0,.3);
+    text-align: center;
 }
 
-.counter {
-    font-size: 80px;
-    font-weight: 900;
-    margin: 5px 0 15px;
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #25d366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.login-box h1 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.login-box p {
+    color: #667781;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    border: 1px solid #d7dde2;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+input:focus {
+    border-color: #25d366;
 }
 
 button {
     border: 0;
-    border-radius: 50px;
-    padding: 17px 23px;
-    margin: 7px;
-    font-size: 17px;
-    font-weight: 900;
     cursor: pointer;
-    transition: transform .2s;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .2s;
 }
 
 button:hover {
-    transform: scale(1.07) rotate(-1deg);
+    transform: translateY(-1px);
 }
 
-.fight {
-    background: #ff1e1e;
+.login-btn {
+    width: 100%;
+    background: #25d366;
+    color: white;
+    padding: 15px;
+}
+
+.login-btn:hover {
+    background: #1ebe5d;
+}
+
+.error {
+    color: #d93025;
+    font-size: 14px;
+    margin-top: 12px;
+    display: none;
+}
+
+/* DASHBOARD */
+#dashboard {
+    display: none;
+}
+
+header {
+    background: #0b141a;
+    color: white;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.header-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+.header-subtitle {
+    color: #aebac1;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.logout {
+    background: #26343c;
     color: white;
 }
 
-.joke {
-    background: #ffd93d;
-    color: #222;
+.logout:hover {
+    background: #34454e;
 }
 
-.peace {
-    background: #55efc4;
-    color: #111;
-}
-
-.message {
-    font-size: 25px;
-    font-weight: 900;
-    line-height: 1.4;
-    min-height: 80px;
-}
-
-.laugh {
-    font-size: 55px;
-    margin: 10px;
-}
-
-.small {
-    font-size: 15px;
-    opacity: .85;
-    margin-top: 30px;
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-8px) rotate(-2deg); }
-    50% { transform: translateX(8px) rotate(2deg); }
-    75% { transform: translateX(-8px) rotate(-2deg); }
-    100% { transform: translateX(0); }
-}
-
-.shake {
-    animation: shake .4s;
-}
-
-@keyframes pop {
-    0% { transform: scale(.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.pop {
-    animation: pop .35s;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <div class="title">
-        Sara<br>&<br>The Boss
-    </div>
-
-    <div class="subtitle">
-        😂 NO PODEMOS SEGUIR PELEANDO 😂
-    </div>
-
-    <div class="card">
-        <div class="names">
-            <div class="name">👑 Sara</div>
-            <div class="name">😎 The Boss</div>
-        </div>
-    </div>
-
-    <div class="card">
-
-        <div class="laugh">🥊😂🥊</div>
-
-        <h2>CONTADOR OFICIAL DE PELEAS</h2>
-
-        <div class="counter" id="counter">0</div>
-
-        <button class="fight" onclick="fight()">
-            🥊 PELEAMOS
-        </button>
-
-        <button class="joke" onclick="joke()">
-            😂 ERA BROMA
-        </button>
-
-        <button class="peace" onclick="peace()">
-            ❤️ PAZ
-        </button>
-
-    </div>
-
-    <div class="card">
-
-        <h2>📢 REGLAS OFICIALES</h2>
-
-        <div class="message" id="message">
-            Todo empezó por una tontería...
-        </div>
-
-    </div>
-
-    <div class="card">
-
-        <h2>👑 DICCIONARIO OFICIAL</h2>
-
-        <p>Cuando Sara dice:</p>
-
-        <div class="message">
-            "Gorda no" 😂
-        </div>
-
-        <p>Traducción oficial:</p>
-
-        <div class="message">
-            "Mi reina ❤️"
-        </div>
-
-        <p>Cuando The Boss dice:</p>
-
-        <div class="message">
-            "No estamos peleando."
-        </div>
-
-        <p>Traducción:</p>
-
-        <div class="message">
-            "Estamos negociando." 😂
-        </div>
-
-    </div>
-
-    <div class="card">
-
-        <h2>❤️ FINAL OFICIAL</h2>
-
-        <div class="message">
-            No importa quién tenga razón...
-            <br><br>
-            Porque al final...
-            <br><br>
-            😂 LOS DOS TIENEN LA CULPA 😂
-        </div>
-
-        <button class="peace" onclick="finalPeace()">
-            ❤️ HACER LAS PACES
-        </button>
-
-    </div>
-
-    <div class="small">
-        Sara & The Boss © 2026 😂<br>
-        Sitio web oficial de las discusiones que nunca fueron discusiones.
-    </div>
-
-</div>
-
-<script>
-
-let fights = 0;
-
-const messages = [
-    "Gorda no 😂",
-    "Mi reina ❤️",
-    "¿Por qué estamos peleando? 😂",
-    "Yo no hice nada 😇",
-    "Tú empezaste 😂",
-    "No, tú empezaste 😂",
-    "Bueno... paz ❤️",
-    "Cinco minutos después: otra pelea 😂",
-    "Esto no es una pelea, es una conversación fuerte 😂",
-    "The Boss siempre tiene la razón... según The Boss 😂",
-    "Sara siempre tiene la razón... según Sara 😂"
-];
-
-function updateMessage(text) {
-    const message = document.getElementById("message");
-
-    message.classList.remove("pop");
-    void message.offsetWidth;
-    message.classList.add("pop");
-
-    message.innerHTML = text;
-}
-
-function fight() {
-
-    fights++;
-
-    document.getElementById("counter").innerText = fights;
-
-    document.body.classList.remove("shake");
-    void document.body.offsetWidth;
-    document.body.classList.add("shake");
-
-    const random =
-        messages[Math.floor(Math.random() * messages.length)];
-
-    updateMessage(random);
-}
-
-function joke() {
-
-    updateMessage(
-        "😂 TRANQUILOS TODOS... ERA BROMA 😂<br><br>" +
-        "Bueno... probablemente."
-    );
-}
-
-function peace() {
-
-    updateMessage(
-        "❤️ PAZ OFICIAL ❤️<br><br>" +
-        "Gorda no.<br>" +
-        "Mi reina. 👑"
-    );
-}
-
-function finalPeace() {
-
-    fights = 0;
-
-    document.getElementById("counter").innerText = "0";
-
-    updateMessage(
-        "❤️🤝 PAZ FIRMADA 🤝❤️<br><br>" +
-        "Sara y The Boss han decidido dejar de pelear.<br><br>" +
-        "Hasta la próxima 😂"
-    );
-}
-
-</script>
-
-</body>
-</html>
+.conta
+```
