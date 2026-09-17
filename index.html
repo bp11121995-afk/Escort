@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sara & The Boss 😂</title>
 
 <style>
@@ -11,134 +12,95 @@
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-}
-
 body {
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b, #6c2bd9);
     color: white;
     text-align: center;
-}
-
-/* =========================
-   PASSWORD SCREEN
-========================= */
-
-#loginScreen {
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: linear-gradient(135deg, #111111, #241027, #111111);
-}
-
-.loginBox {
-    width: 100%;
-    max-width: 430px;
-    padding: 40px 25px;
-    background: #202020;
-    border-radius: 30px;
-    box-shadow: 0 20px 70px rgba(0,0,0,.7);
-}
-
-.lock {
-    font-size: 65px;
-    margin-bottom: 15px;
-}
-
-.loginBox h1 {
-    margin: 0 0 10px;
-    font-size: 36px;
-}
-
-.loginBox p {
-    margin: 0 0 25px;
-    color: #cccccc;
-}
-
-#password {
-    width: 100%;
-    padding: 17px;
-    border: 0;
-    outline: 0;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.loginButton {
-    width: 100%;
-    padding: 17px;
-    border: 0;
-    border-radius: 50px;
-    background: #ff416c;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.loginButton:hover {
-    transform: scale(1.03);
-}
-
-#error {
-    display: none;
-    margin-top: 15px;
-    color: #ff7777;
-    font-weight: bold;
-}
-
-/* =========================
-   MAIN WEBSITE
-========================= */
-
-#website {
-    display: none;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, #ff8fab, transparent 35%),
+        radial-gradient(circle at bottom right, #7c4dff, transparent 35%),
+        linear-gradient(135deg, #ff416c, #ff4b2b);
 }
 
 .container {
     width: 100%;
     max-width: 900px;
     margin: auto;
-    padding: 35px 20px 60px;
+    padding: 35px 18px 60px;
 }
 
 .title {
-    font-size: clamp(45px, 10vw, 90px);
+    font-size: clamp(45px, 11vw, 95px);
     font-weight: 900;
-    line-height: .95;
+    line-height: .9;
     text-transform: uppercase;
-    text-shadow: 5px 5px rgba(0,0,0,.22);
+    text-shadow: 5px 5px 0 rgba(0,0,0,.2);
 }
 
 .subtitle {
-    margin: 18px 0 30px;
     font-size: clamp(20px, 5vw, 30px);
-    font-weight: bold;
+    font-weight: 800;
+    margin: 20px 0 30px;
 }
 
 .card {
-    margin: 22px 0;
-    padding: 30px 20px;
     background: rgba(0,0,0,.25);
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0,0,0,.25);
-}
-
-.card h2 {
-    margin: 0 0 15px;
+    border-radius: 28px;
+    padding: 30px 20px;
+    margin: 22px 0;
+    box-shadow: 0 15px 45px rgba(0,0,0,.25);
+    backdrop-filter: blur(8px);
 }
 
 .names {
     display: flex;
-    justify-content: cen
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.name {
+    background: white;
+    color: #ff416c;
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.counter {
+    font-size: 80px;
+    font-weight: 900;
+    margin: 5px 0 15px;
+}
+
+button {
+    border: 0;
+    border-radius: 50px;
+    padding: 17px 23px;
+    margin: 7px;
+    font-size: 17px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+button:hover {
+    transform: scale(1.07) rotate(-1deg);
+}
+
+.fight {
+    background: #ff1e1e;
+    color: white;
+}
+
+.joke {
+    background: #ffd93d;
+    color: #222;
+}
+
+.peace {
+    background: #55efc4;
 ```
