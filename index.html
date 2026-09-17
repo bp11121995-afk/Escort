@@ -1,71 +1,73 @@
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Sara & The Boss 😂</title>
 
 <style>
 * {
     box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
+    min-height: 100%;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b, #7b2cff);
+    background: linear-gradient(135deg, #ff416c, #ff4b2b, #6c2bd9);
     color: white;
     text-align: center;
 }
 
-/* PASSWORD SCREEN */
+/* =========================
+   PASSWORD SCREEN
+========================= */
 
 #loginScreen {
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 10000;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 20px;
-    background: linear-gradient(135deg, #111, #301934, #111);
+    background: linear-gradient(135deg, #111111, #241027, #111111);
 }
 
 .loginBox {
     width: 100%;
     max-width: 430px;
     padding: 40px 25px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: #202020;
     border-radius: 30px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 70px rgba(0,0,0,.7);
 }
 
 .lock {
-    font-size: 70px;
+    font-size: 65px;
     margin-bottom: 15px;
 }
 
 .loginBox h1 {
+    margin: 0 0 10px;
     font-size: 36px;
-    margin-bottom: 10px;
 }
 
 .loginBox p {
-    opacity: .8;
-    margin-bottom: 25px;
+    margin: 0 0 25px;
+    color: #cccccc;
 }
 
-input {
+#password {
     width: 100%;
     padding: 17px;
-    border: none;
-    outline: none;
+    border: 0;
+    outline: 0;
     border-radius: 50px;
     text-align: center;
     font-size: 18px;
@@ -75,9 +77,9 @@ input {
 .loginButton {
     width: 100%;
     padding: 17px;
-    border: none;
+    border: 0;
     border-radius: 50px;
-    background: #ff4f81;
+    background: #ff416c;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -89,13 +91,15 @@ input {
 }
 
 #error {
-    color: #ff8080;
-    margin-top: 15px;
-    font-weight: bold;
     display: none;
+    margin-top: 15px;
+    color: #ff7777;
+    font-weight: bold;
 }
 
-/* MAIN WEBSITE */
+/* =========================
+   MAIN WEBSITE
+========================= */
 
 #website {
     display: none;
@@ -105,36 +109,36 @@ input {
     width: 100%;
     max-width: 900px;
     margin: auto;
-    padding: 35px 20px 50px;
+    padding: 35px 20px 60px;
 }
 
-h2 {
-    margin-bottom: 15px;
-}
-
-.mainTitle {
+.title {
     font-size: clamp(45px, 10vw, 90px);
     font-weight: 900;
+    line-height: .95;
     text-transform: uppercase;
-    text-shadow: 5px 5px 0 rgba(0,0,0,.2);
-    margin-top: 15px;
+    text-shadow: 5px 5px rgba(0,0,0,.22);
 }
 
 .subtitle {
+    margin: 18px 0 30px;
     font-size: clamp(20px, 5vw, 30px);
     font-weight: bold;
-    margin: 10px 0 30px;
 }
 
 .card {
-    background: rgba(0,0,0,.25);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    padding: 30px 20px;
     margin: 22px 0;
+    padding: 30px 20px;
+    background: rgba(0,0,0,.25);
+    border-radius: 25px;
     box-shadow: 0 15px 40px rgba(0,0,0,.25);
 }
 
+.card h2 {
+    margin: 0 0 15px;
+}
+
 .names {
-    displ
+    display: flex;
+    justify-content: cen
 ```
