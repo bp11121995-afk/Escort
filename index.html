@@ -2,167 +2,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WhatsApp Manager</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+  <title>EscortsMalta | Adult Directory Malta</title>
+  <meta name="description" content="EscortsMalta — 18+ adult directory in Malta. Browse profiles and contact listed adults directly.">
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f3f5f8;
-    color: #17202a;
-    min-height: 100vh;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* LOGIN */
-#loginPage {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: linear-gradient(135deg, #0b141a, #17252d);
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0f;
+      color: #fff;
+      line-height: 1.5;
+    }
 
-.login-box {
-    width: 100%;
-    max-width: 420px;
-    background: white;
-    border-radius: 22px;
-    padding: 38px;
-    box-shadow: 0 25px 70px rgba(0,0,0,.3);
-    text-align: center;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-.logo {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: #25d366;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 32px;
-    font-weight: bold;
-}
+    /* AGE GATE */
+    #ageGate {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.97);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
 
-.login-box h1 {
-    font-size: 27px;
-    margin-bottom: 8px;
-}
+    .age-box {
+      width: 100%;
+      max-width: 430px;
+      background: #17171d;
+      border: 1px solid #33333d;
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 20px 70px rgba(0,0,0,.6);
+    }
 
-.login-box p {
-    color: #667781;
-    margin-bottom: 25px;
-}
+    .age-box h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
 
-input {
-    width: 100%;
-    border: 1px solid #d7dde2;
-    border-radius: 12px;
-    padding: 15px;
-    font-size: 16px;
-    outline: none;
-    margin-bottom: 12px;
-}
+    .age-box p {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
 
-input:focus {
-    border-color: #25d366;
-}
+    .age-buttons {
+      display: flex;
+      gap: 12px;
+    }
 
-button {
-    border: 0;
-    cursor: pointer;
-    border-radius: 10px;
-    padding: 12px 18px;
-    font-weight: 700;
-    font-size: 14px;
-    transition: .2s;
-}
+    .age-buttons button {
+      flex: 1;
+      border: 0;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-button:hover {
-    transform: translateY(-1px);
-}
+    .enter-btn {
+      background: #e91e63;
+      color: white;
+    }
 
-.login-btn {
-    width: 100%;
-    background: #25d366;
-    color: white;
-    padding: 15px;
-}
+    .leave-btn {
+      background: #33333d;
+      color: white;
+    }
 
-.login-btn:hover {
-    background: #1ebe5d;
-}
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,11,15,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #25252d;
+    }
 
-.error {
-    color: #d93025;
-    font-size: 14px;
-    margin-top: 12px;
-    display: none;
-}
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-/* DASHBOARD */
-#dashboard {
-    display: none;
-}
-
-header {
-    background: #0b141a;
-    color: white;
-    padding: 18px 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-}
-
-.header-logo {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: #25d366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-header h1 {
-    font-size: 20px;
-}
-
-.header-subtitle {
-    color: #aebac1;
-    font-size: 12px;
-    margin-top: 3px;
-}
-
-.logout {
-    background: #26343c;
-    color: white;
-}
-
-.logout:hover {
-    background: #34454e;
-}
-
-.conta
+    .logo {
 ```
