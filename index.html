@@ -1,109 +1,122 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>EscortsMalta | Adult Directory Malta</title>
-  <meta name="description" content="EscortsMalta — 18+ adult directory in Malta. Browse profiles and contact listed adults directly.">
+<title>EscortsMalta | 18+ Adult Directory</title>
+<meta name="description" content="EscortsMalta - 18+ adult directory in Malta.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0f;
-      color: #fff;
-      line-height: 1.5;
-    }
+:root {
+  --pink: #ff2d75;
+  --pink-dark: #d91e5d;
+  --bg: #08080b;
+  --card: #141419;
+  --card2: #1b1b22;
+  --text: #ffffff;
+  --muted: #a4a4ad;
+  --border: rgba(255,255,255,.09);
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    /* AGE GATE */
-    #ageGate {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.97);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      padding: 20px;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
 
-    .age-box {
-      width: 100%;
-      max-width: 430px;
-      background: #17171d;
-      border: 1px solid #33333d;
-      border-radius: 20px;
-      padding: 35px 25px;
-      text-align: center;
-      box-shadow: 0 20px 70px rgba(0,0,0,.6);
-    }
+/* AGE GATE */
 
-    .age-box h1 {
-      font-size: 34px;
-      margin-bottom: 10px;
-    }
+.age-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #050507;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 
-    .age-box p {
-      color: #aaa;
-      margin-bottom: 25px;
-    }
+.age-box {
+  width: 100%;
+  max-width: 460px;
+  background: #141419;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px 28px;
+  text-align: center;
+  box-shadow: 0 30px 100px rgba(0,0,0,.8);
+}
 
-    .age-buttons {
-      display: flex;
-      gap: 12px;
-    }
+.age-icon {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: rgba(255,45,117,.12);
+  border: 1px solid rgba(255,45,117,.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 27px;
+  font-weight: 800;
+  color: var(--pink);
+}
 
-    .age-buttons button {
-      flex: 1;
-      border: 0;
-      border-radius: 10px;
-      padding: 14px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.age-box h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
 
-    .enter-btn {
-      background: #e91e63;
-      color: white;
-    }
+.age-box p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
 
-    .leave-btn {
-      background: #33333d;
-      color: white;
-    }
+.age-buttons {
+  display: flex;
+  gap: 12px;
+}
 
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(11,11,15,.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #25252d;
-    }
+.age-buttons button {
+  flex: 1;
+  padding: 14px;
+  border: 0;
+  border-radius: 11px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+.enter {
+  background: var(--pink);
+  color: white;
+}
 
-    .logo {
+.leave {
+  background: #303038;
+  color: white;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(
 ```
