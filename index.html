@@ -1,264 +1,435 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EscortsMalta | Adult Directory Malta</title>
-<meta name="description" content="EscortsMalta - 18+ adult directory in Malta. Browse profiles and contact providers directly.">
+
+<title>EscortsMalta</title>
 
 <style>
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0f1014;
-  color: #ffffff;
-  line-height: 1.5;
-}
-
-/* HEADER */
-header {
-  background: #17181e;
-  border-bottom: 1px solid #292a31;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    padding: 18px 20px;
+    text-align: center;
 }
 
 .logo {
-  font-size: 25px;
-  font-weight: 800;
-  color: #ff4f91;
-  text-decoration: none;
+    color: #e91e63;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .logo span {
-  color: #ffffff;
+    color: #222222;
 }
 
-nav {
-  display: flex;
-  gap: 22px;
-}
-
-nav a {
-  color: #dddddf;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: #ff4f91;
-}
-
-/* HERO */
 .hero {
-  background:
-    radial-gradient(circle at top right, rgba(255,79,145,0.18), transparent 35%),
-    linear-gradient(180deg, #17181e 0%, #0f1014 100%);
-  padding: 80px 20px 60px;
-  text-align: center;
-}
-
-.hero-content {
-  max-width: 850px;
-  margin: auto;
+    background: #ffffff;
+    text-align: center;
+    padding: 70px 20px 50px;
 }
 
 .hero h1 {
-  font-size: 52px;
-  line-height: 1.1;
-  margin-bottom: 18px;
+    margin: 0 0 15px;
+    font-size: 46px;
+    color: #222222;
 }
 
 .hero h1 span {
-  color: #ff4f91;
+    color: #e91e63;
 }
 
 .hero p {
-  color: #b8b8bf;
-  font-size: 18px;
-  max-width: 650px;
-  margin: auto;
+    margin: 0 auto;
+    max-width: 650px;
+    color: #666666;
+    font-size: 18px;
 }
 
-/* SEARCH */
-.search-area {
-  max-width: 1100px;
-  margin: -25px auto 50px;
-  padding: 0 20px;
-  position: relative;
-  z-index: 5;
+.search {
+    max-width: 1000px;
+    margin: 0 auto 45px;
+    padding: 0 20px;
 }
 
-.search-box {
-  background: #191a20;
-  border: 1px solid #303139;
-  border-radius: 16px;
-  padding: 18px;
-  display: grid;
-  grid-template-columns: 1fr 220px;
-  gap: 12px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+.search input,
+.search select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 16px;
 }
 
-.search-box input,
-.search-box select {
-  width: 100%;
-  padding: 15px 16px;
-  border-radius: 10px;
-  border: 1px solid #35363e;
-  background: #101116;
-  color: #ffffff;
-  outline: none;
-  font-size: 15px;
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px 60px;
 }
 
-.search-box input:focus,
-.search-box select:focus {
-  border-color: #ff4f91;
+.section h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #222222;
+    margin-bottom: 30px;
 }
 
-/* MAIN */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px 70px;
-}
-
-.section-title {
-  margin-bottom: 25px;
-}
-
-.section-title h2 {
-  font-size: 28px;
-  margin-bottom: 5px;
-}
-
-.section-title p {
-  color: #96979e;
-}
-
-/* PROFILES */
 .profiles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-.card {
-  background: #18191f;
-  border: 1px solid #292a31;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: #ff4f91;
+.profile {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .photo {
-  height: 300px;
-  background: linear-gradient(135deg, #292b34, #17181e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+    height: 260px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.photo-letter {
-  width: 105px;
-  height: 105px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ff4f91;
-  color: #ffffff;
-  font-size: 42px;
-  font-weight: 800;
+.photo-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #e91e63;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: bold;
 }
 
-.badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: #ff4f91;
-  color: #ffffff;
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: bold;
+.profile-info {
+    padding: 20px;
 }
 
-.card-content {
-  padding: 20px;
-}
-
-.card h3 {
-  font-size: 21px;
-  margin-bottom: 4px;
+.profile-info h3 {
+    margin: 0 0 6px;
+    color: #222222;
+    font-size: 22px;
 }
 
 .location {
-  color: #ff76a9;
-  font-size: 13px;
-  margin-bottom: 12px;
+    color: #e91e63;
+    font-size: 14px;
+    margin-bottom: 12px;
 }
 
 .description {
-  color: #a9aab1;
-  font-size: 14px;
-  min-height: 45px;
-  margin-bottom: 18px;
+    color: #666666;
+    font-size: 14px;
+    min-height: 42px;
 }
 
-.actions {
-  display: flex;
-  gap: 9px;
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
 }
 
-.btn {
-  flex: 1;
-  text-align: center;
-  padding: 11px;
-  border-radius: 9px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
+.button {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-.btn-main {
-  background: #ff4f91;
-  color: #ffffff;
+.view {
+    background: #eeeeee;
+    color: #222222;
 }
 
-.btn-main:hover {
-  background: #e93f7d;
+.whatsapp {
+    background: #25d366;
+    color: #ffffff;
 }
 
-.btn-seco
+.about {
+    max-width: 900px;
+    margin: 20px auto 70px;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+}
+
+.about h2 {
+    color: #222222;
+}
+
+.about p {
+    color: #666666;
+    line-height: 1.7;
+}
+
+.footer {
+    background: #ffffff;
+    border-top: 1px solid #dddddd;
+    text-align: center;
+    padding: 30px 20px;
+    color: #777777;
+}
+
+.footer strong {
+    color: #e91e63;
+}
+
+@media (max-width: 800px) {
+    .profiles {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 550px) {
+    .profiles {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo">
+        Escorts<span>Malta</span>
+    </div>
+</div>
+
+<div class="hero">
+    <h1>Discover <span>Escorts</span> in Malta</h1>
+    <p>
+        Browse adult profiles and contact providers directly.
+        All profiles are for adults aged 18 and over.
+    </p>
+</div>
+
+<div class="search">
+    <input type="text" placeholder="Search profiles or locations">
+
+    <select>
+        <option>All Malta</option>
+        <option>Sliema</option>
+        <option>St Julian's</option>
+        <option>Gzira</option>
+        <option>Bugibba</option>
+        <option>Valletta</option>
+        <option>Mellieha</option>
+    </select>
+</div>
+
+<div class="section">
+
+    <h2>Featured Profiles</h2>
+
+    <div class="profiles">
+
+        <div class="profile">
+            <div class="photo">
+                <div class="photo-circle">S</div>
+            </div>
+
+            <div class="profile-info">
+                <h3>Sofia, 25</h3>
+                <div class="location">Sliema</div>
+
+                <div class="description">
+                    Adult profile based in Sliema.
+                </div>
+
+                <div class="buttons">
+                    <a class="button view" href="#">View Profile</a>
+                    <a class="button whatsapp"
+                       href="https://wa.me/35600000000"
+                       target="_blank">
+                       WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="profile">
+            <div class="photo">
+                <div class="photo-circle">E</div>
+            </div>
+
+            <div class="profile-info">
+                <h3>Emma, 27</h3>
+                <div class="location">St Julian's</div>
+
+                <div class="description">
+                    Adult profile based in St Julian's.
+                </div>
+
+                <div class="buttons">
+                    <a class="button view" href="#">View Profile</a>
+                    <a class="button whatsapp"
+                       href="https://wa.me/35600000000"
+                       target="_blank">
+                       WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="profile">
+            <div class="photo">
+                <div class="photo-circle">L</div>
+            </div>
+
+            <div class="profile-info">
+                <h3>Laura, 26</h3>
+                <div class="location">Gzira</div>
+
+                <div class="description">
+                    Adult profile based in Gzira.
+                </div>
+
+                <div class="buttons">
+                    <a class="button view" href="#">View Profile</a>
+                    <a class="button whatsapp"
+                       href="https://wa.me/35600000000"
+                       target="_blank">
+                       WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="profile">
+            <div class="photo">
+                <div class="photo-circle">M</div>
+            </div>
+
+            <div class="profile-info">
+                <h3>Mia, 29</h3>
+                <div class="location">Bugibba</div>
+
+                <div class="description">
+                    Adult profile based in Bugibba.
+                </div>
+
+                <div class="buttons">
+                    <a class="button view" href="#">View Profile</a>
+                    <a class="button whatsapp"
+                       href="https://wa.me/35600000000"
+                       target="_blank">
+                       WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="profile">
+            <div class="photo">
+                <div class="photo-circle">A</div>
+            </div>
+
+            <div class="profile-info">
+                <h3>Anna, 28</h3>
+                <div class="location">Valletta</div>
+
+                <div class="description">
+                    Adult profile based in Valletta.
+                </div>
+
+                <div class="buttons">
+                    <a class="button view" href="#">View Profile</a>
+                    <a class="button whatsapp"
+                       href="https://wa.me/35600000000"
+                       target="_blank">
+                       WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="profile">
+            <div class="photo">
+                <div class="photo-circle">N</div>
+            </div>
+
+            <div class="profile-info">
+                <h3>Nina, 30</h3>
+                <div class="location">Mellieha</div>
+
+                <div class="description">
+                    Adult profile based in Mellieha.
+                </div>
+
+                <div class="buttons">
+                    <a class="button view" href="#">View Profile</a>
+                    <a class="button whatsapp"
+                       href="https://wa.me/35600000000"
+                       target="_blank">
+                       WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="about">
+    <h2>About EscortsMalta</h2>
+
+    <p>
+        EscortsMalta is an 18+ adult directory for publicly listed
+        adult profiles in Malta. Profiles are intended for adults
+        aged 18 and over.
+    </p>
+</div>
+
+<div class="footer">
+    <strong>EscortsMalta</strong>
+    <br>
+    18+ Adult Directory Malta
+    <br><br>
+    © 2026 EscortsMalta
+</div>
+
+</body>
+</html>
 ```
